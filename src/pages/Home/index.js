@@ -1,10 +1,12 @@
 import { useState } from "react"
 import { View, Text, StyleSheet, SafeAreaView, FlatList, TouchableOpacity } from "react-native"
+import { useNavigation } from "@react-navigation/native"
 
 import { Feather } from '@expo/vector-icons'
 import Product from "../../components/Product"
 
 export default function Home(){
+  const navigation = useNavigation();
   const [products, setProducts] = useState([
     {
       id: '1',
@@ -38,7 +40,10 @@ export default function Home(){
       <View style={styles.CartContent}>
         <Text style={styles.Title}>Lista de produtos</Text>
         
-        <TouchableOpacity style={styles.CartButton}>
+        <TouchableOpacity 
+          style={styles.CartButton}
+          onPress={ () => navigation.navigate("Cart") }
+        >
           <View style={styles.Dot}>
             <Text style={styles.DotText}>3</Text>
           </View>
