@@ -2,6 +2,7 @@ import { useState } from "react"
 import { View, Text, StyleSheet, SafeAreaView, FlatList, TouchableOpacity } from "react-native"
 
 import { Feather } from '@expo/vector-icons'
+import Product from "../../components/Product"
 
 export default function Home(){
   const [products, setProducts] = useState([
@@ -45,7 +46,12 @@ export default function Home(){
         </TouchableOpacity>
       </View>
 
-      
+      <FlatList
+        style={styles.List}
+        data={products}
+        keyExtractor={ (item) => String(item.id) }
+        renderItem={ ({ item }) => <Product data={item} /> }
+      />
     </SafeAreaView>
   )
 }
