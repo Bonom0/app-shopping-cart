@@ -16,7 +16,7 @@ export default function Routes(){
         }}
       />
 
-<Stack.Screen
+      <Stack.Screen
         name="Cart"
         component={Cart}
         options={{
