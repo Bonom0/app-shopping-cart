@@ -51,11 +51,13 @@ export default function Home(){
           style={styles.CartButton}
           onPress={ () => navigation.navigate("Cart") }
         >
-          <View style={styles.Dot}>
-            <Text style={styles.DotText}>
-              {cart?.length}
-            </Text>
-          </View>
+          {cart.length >= 1 && (
+            <View style={styles.Dot}>
+              <Text style={styles.DotText}>
+                {cart?.length}
+              </Text>
+            </View>
+          )}
           <Feather name="shopping-cart" size={30} color="#000"/>
         </TouchableOpacity>
       </View>
