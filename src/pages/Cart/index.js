@@ -13,6 +13,7 @@ export default function Cart(){
         data={cart}
         showsVerticalScrollIndicator={false}
         key={ (item) => String(item.id) }
+        ListEmptyComponent={ () => <Text>Nenhum item no carrinho..</Text> }
         renderItem={ ({ item }) => (
           <CardItem
             data={item}
